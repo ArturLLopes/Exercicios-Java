@@ -1,0 +1,101 @@
+1. A classe Funcionarios (Classe Base)
+A classe Funcionarios é a classe base de onde todas as outras classes (Gerente, Vendedor, Atendente) herdam. Ela define os atributos e métodos comuns a todos os funcionários do sistema.
+
+Atributos:
+nome, email, senha: São atributos básicos de identificação do funcionário.
+
+isAdministrador: Um atributo booleano que indica se o funcionário é administrador ou não. Isso é comum a todos os tipos de funcionários, mas o valor será configurado de maneira diferente para cada tipo (gerente será sempre administrador, e vendedor/atendente não).
+
+Métodos:
+Getters e Setters: Permitem acessar e modificar os atributos da classe.
+
+Métodos abstratos (realizarLogin(), realizarLogoff(), alterarDados(), alterarSenha()): São definidos como "abstratos" porque precisam ser implementados por cada classe que herda de Funcionarios. Cada tipo de funcionário terá sua implementação específica desses métodos.
+
+2. A classe Gerente
+A classe Gerente herda de Funcionarios e implementa os métodos necessários para um gerente.
+
+Construtor:
+super(nome, email, senha, true): Aqui, chamamos o construtor da classe Funcionarios para definir os atributos do gerente, incluindo que ele é um administrador (com true).
+
+Métodos:
+realizarLogin(): Imprime uma mensagem informando que o gerente fez login.
+
+realizarLogoff(): Imprime uma mensagem informando que o gerente fez logoff.
+
+alterarDados(): Permite alterar os dados do gerente, como nome e e-mail.
+
+alterarSenha(): Permite alterar a senha do gerente.
+
+gerarRelatorioFinanceiro() e consultarVendas(): São métodos exclusivos do gerente, conforme solicitado na questão. Eles são responsáveis por ações específicas do gerente, como gerar relatórios financeiros e consultar vendas.
+
+3. A classe Vendedor
+A classe Vendedor também herda de Funcionarios e implementa os métodos necessários para um vendedor.
+
+Construtor:
+super(nome, email, senha, false): O construtor da classe Vendedor passa false para isAdministrador, indicando que um vendedor não é um administrador.
+
+Métodos:
+realizarLogin() e realizarLogoff(): Similar ao gerente, mas com mensagens relacionadas ao vendedor.
+
+alterarDados() e alterarSenha(): Permitem ao vendedor alterar seus dados e senha.
+
+realizarVenda(): Incrementa a quantidade de vendas do vendedor e imprime o total.
+
+consultarVendas(): Exibe o número total de vendas feitas pelo vendedor.
+
+4. A classe Atendente
+A classe Atendente também herda de Funcionarios, mas com um foco diferente, pois ele lida com o caixa.
+
+Construtor:
+super(nome, email, senha, false): Define que o atendente não é um administrador, assim como o vendedor.
+
+Métodos:
+realizarLogin() e realizarLogoff(): Exibem mensagens de login e logoff, mas relacionadas ao atendente.
+
+alterarDados() e alterarSenha(): Permitem ao atendente alterar seus dados e senha.
+
+receberPagamentos(): Incrementa o valor em caixa quando um pagamento é feito.
+
+fecharCaixa(): Exibe o valor total no caixa quando o atendente decide fechar o caixa.
+
+5. A classe Main
+O Main é o ponto de entrada do programa. Ele orquestra as interações entre o usuário e o sistema. Vamos quebrar o que acontece no Main:
+
+Menu Inicial:
+O programa exibe um menu perguntando ao usuário qual função ele deseja escolher: Gerente, Vendedor ou Atendente. O usuário escolhe uma das opções (1, 2 ou 3).
+
+Coleta de Dados do Usuário:
+Após a escolha da função, o programa solicita os dados do usuário: nome, email e senha. O usuário digita esses dados, e eles são armazenados em variáveis.
+
+Criação do Funcionário:
+Dependendo da função escolhida, o programa cria um objeto do tipo Gerente, Vendedor ou Atendente usando o construtor correspondente. Cada tipo de funcionário é configurado com nome, email, senha e um valor de isAdministrador específico.
+
+Menu de Ações:
+Com base na função escolhida, o programa exibe um menu de ações relacionadas ao tipo de funcionário. O gerente, vendedor e atendente têm ações específicas:
+
+Gerente: Gerar relatório financeiro, consultar vendas, alterar dados, alterar senha.
+
+Vendedor: Realizar venda, consultar vendas, alterar dados, alterar senha.
+
+Atendente: Receber pagamentos, fechar caixa, alterar dados, alterar senha.
+
+Execução da Ação:
+O usuário escolhe uma ação (1 a 4), e o programa executa a ação correspondente ao tipo de funcionário. Por exemplo, se o usuário for um vendedor e escolher "Realizar venda", o número de vendas do vendedor será incrementado. Se o usuário for um atendente e escolher "Receber pagamentos", o valor em caixa será atualizado.
+
+Conclusão:
+Após a execução da ação, o programa imprime uma mensagem informando que a ação foi concluída com sucesso.
+
+Conclusão
+O programa foi estruturado de forma modular:
+
+Funcionarios define as características e comportamentos comuns a todos os tipos de funcionários.
+
+Gerente, Vendedor e Atendente herdam de Funcionarios e implementam seus comportamentos específicos.
+
+Main gerencia a interação com o usuário e chama os métodos apropriados conforme a escolha do usuário.
+
+Através dessa estrutura, o uso de herança e polimorfismo é bem evidente:
+
+Herança: As classes Gerente, Vendedor e Atendente herdam de Funcionarios, reutilizando os atributos e métodos comuns.
+
+Polimorfismo: O programa permite que, dependendo do tipo de funcionário, as ações realizadas no menu sejam diferentes (exemplo: o gerente pode gerar relatório financeiro, enquanto o vendedor realiza vendas).
