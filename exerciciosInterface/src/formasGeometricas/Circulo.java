@@ -14,7 +14,7 @@ public record Circulo(double raio)  implements FormasGeometricas {
         System.out.println("Infome o valor o Raio: ");
         var raio = scanner.nextDouble();
 
-        var circulo = new Circulo(raio);;
+        var circulo = new Circulo(raio);
         System.out.printf("A área do circulo é: %.2f%n", circulo.getArea());
     }
 }
