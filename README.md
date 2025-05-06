@@ -14,6 +14,10 @@ Os exercícios estão organizados conforme os tópicos estudados no curso:
 ## 🎯 Objetivo
 O principal objetivo deste repositório é servir como material de apoio e revisão para os conceitos aprendidos durante o curso, além de auxiliar outros estudantes que estejam iniciando seus estudos em Java.
 
+## 📋 Questionario
+Repositorio do Professor Jr. ([Veja aqui as perguntas](https://github.com/digitalinnovationone/exercicios-java-basico/tree/main/exercicios))
+
+
 
 ## 🚀 Como Executar os Exercícios Java
 
