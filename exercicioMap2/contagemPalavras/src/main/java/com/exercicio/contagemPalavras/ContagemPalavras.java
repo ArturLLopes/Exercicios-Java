@@ -34,10 +34,13 @@ public class ContagemPalavras {
     public String encontrarPalavraMaisFrequente(){
         String palavraMaisFrequente = null;
         int maiorContagem = 0;
-        for (Map.Entry<String, Integer> entry : palavras.entrySet()){
-            maiorContagem = entry.getValue();
-            palavraMaisFrequente = entry.getKey();
+        for (Map.Entry<String, Integer> entry : palavras.entrySet()) {
+            if (entry.getValue() > maiorContagem) {
+                maiorContagem = entry.getValue();
+                palavraMaisFrequente = entry.getKey();
+            }
         }
         return palavraMaisFrequente;
+
     }
 }
